@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Member Dashboard - Gym Management System</title>
+  <link rel="stylesheet" href="style/member.css">
+</head>
+<body>
+
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <h2>Member Panel</h2>
+      <ul>
+        <li><a href="#" onclick="showMemberSection('profile')">My Profile</a></li>
+        <li><a href="#" onclick="showMemberSection('billing')">My Billing</a></li>
+        <li><a href="#" onclick="showMemberSection('plans')">My Plans</a></li>
+        <li><a href="#" onclick="showMemberSection('notifications')">Notifications</a></li>
+        <li><a href="login.html">Logout</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <h1>Welcome, Member</h1>
+      <div id="memberSectionContent">
+        <p>Select an option from the sidebar to get started.</p>
+      </div>
+    </main>
+  </div>
+
+  <script src="script/member.js"></script>
+</body>
+</html>

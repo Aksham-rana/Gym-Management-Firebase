@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Gym Management System</title>
+  <link rel="stylesheet" href="style/login.css">
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <div class="logo">🏋️ GymMS</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="login-section">
+    <div class="login-box">
+      <h2>Login</h2>
+      <input type="email" id="email" placeholder="Enter Email">
+      <input type="password" id="password" placeholder="Enter Password">
+      <select id="role">
+        <option value="admin">Admin</option>
+        <option value="member">Member</option>
+      </select>
+      <button onclick="login()">Login</button>
+      <p id="loginMessage"></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Gym Management System | Designed by Aksham Rana</p>
+  </footer>
+
+
+
+  <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyBac39mTF0Z1f5BZ5SsK6UPuGhDr-jF2hM",
+    authDomain: "gym-management-system-fbcd8.firebaseapp.com",
+    projectId: "gym-management-system-fbcd8",
+    storageBucket: "gym-management-system-fbcd8.firebasestorage.app",
+    messagingSenderId: "383962764157",
+    appId: "1:383962764157:web:c1013ba7f856ccae0e3214",
+    measurementId: "G-783MVPNLCE"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  window.login = function() {
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const role = document.getElementById("role").value;
+    const message = document.getElementById("loginMessage");
+
+    message.innerText = "";
+
+    if (email === "" || password === "") {
+      message.innerText = "Please enter both email and password.";
+      return;
+    }
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        if (role === "admin") {
+          window.location.href = "admin.html";
+        } else {
+          window.location.href = "member.html";
+        }
+      })
+      .catch((error) => {
+        message.innerText = "Login failed: " + error.message;
+      });
+  };
+</script>
+
+<script src="script/login.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Bright contact background */
+.contact-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+  background: url('https://images.unsplash.com/photo-1579751626657-72bc17010498?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+  position: relative;
+}
+
+.contact-section::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(rgba(52, 152, 219, 0.6), rgba(44, 62, 80, 0.7));
+}
+
+/* Glassmorphism contact form with glow */
+.contact-box {
+  position: relative;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25), 0 0 15px rgba(52,152,219,0.4);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  z-index: 1;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.contact-box h2 {
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 0 0 8px rgba(0,0,0,0.6);
+}
+
+.contact-box input,
+.contact-box textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.contact-box button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.contact-box button:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 15px rgba(52, 152, 219, 0.8);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #2c3e50;
+  color: #fff;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #1abc9c;
+}
+
+/* Footer */
+footer {
+  background: #2c3e50;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
