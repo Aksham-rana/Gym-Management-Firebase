@@ -58,6 +58,22 @@ Managing a gym involves handling memberships, payments, and schedules efficientl
 
 ---
 
+## Demo Credentials
+
+To test the application, you can use the following demo accounts:
+
+**Admin Account**  
+- **Email:** `admin@gmail.com`  
+- **Password:** `admin123`  
+
+**Member Account**  
+- **Email:** `member1@gmail.com`  
+- **Password:** `member123`  
+
+> **Note:** These accounts are for demo/testing purposes only.
+
+---
+
 ## 📬 Contact
 
 Feel free to connect or give feedback!  
